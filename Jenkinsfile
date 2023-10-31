@@ -18,7 +18,17 @@ pipeline {
             steps {
                 // Compilar el proyecto usando Gradle
                 echo 'Build...'
-                sh "ff"
+                sh '''
+                    export NVM_DIR="/home/edwincrug/.nvm"
+                    set +x
+                    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+                    nvm use 18
+                    set -x
+                    cd modern
+                    npm install
+                    npm run build
+                    cd ..
+                '''
             }
         }
 
@@ -42,8 +52,8 @@ pipeline {
                 // Mover los archivos compilados a la ruta correcta
                 echo 'Deploy backend...'
                 sh  '''
-                    sudo cp -r -f /var/lib/jenkins/workspace/traccar-prod/* /opt/traccar/
-                    sudo systemctl restart traccar
+                    sudo cp -r -f /var/lib/jenkins/workspace/traccarweb-prod/* /var/www/traccar/
+                    sudo systemctl restart nginx
                 '''
             }
         }
