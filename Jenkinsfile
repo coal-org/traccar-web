@@ -47,7 +47,7 @@ pipeline {
                 // Mover los archivos compilados a la ruta correcta
                 echo 'Deploy backend...'
                 sh  '''
-                    sudo cp -r -f /var/lib/jenkins/workspace/traccarweb-prod/modern/build/* /var/www/traccar/production/frontend
+                    sudo cp -r -f /var/lib/jenkins/workspace/traccarweb-prod/modern/* /var/www/traccar/production/frontend
                     sudo systemctl restart nginx
                 '''
             }
