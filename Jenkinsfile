@@ -47,8 +47,8 @@ pipeline {
                 // Mover los archivos compilados a la ruta correcta
                 echo 'Deploy backend...'
                 sh  '''
-                    sudo cp -r -f /var/lib/jenkins/workspace/traccarweb-prod/modern/* /var/www/traccar/production/frontend
-                    sudo systemctl restart nginx
+                    sudo cp -r -f /var/lib/jenkins/workspace/traccarweb-prod/modern/* /var/www/traccar/production/frontend/
+                    sudo -u edwincrug bash -c 'export NVM_DIR="/home/edwincrug/.nvm" && [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh" && nvm use 14.21.3 && /home/edwincrug/.nvm/versions/node/v14.21.3/bin/pm2 restart traccarweb-frontend-prod'
                 '''
             }
         }
