@@ -1,11 +1,6 @@
 pipeline {
     agent any
 
-    environment {
-        // Definir variables de entorno, como GRADLE_HOME si es necesario
-        echo 'Enviroment...'
-    }
-
     stages {
         stage('Checkout') {
             steps {
