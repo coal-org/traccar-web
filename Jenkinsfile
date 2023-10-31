@@ -14,16 +14,15 @@ pipeline {
                 // Compilar el proyecto usando Gradle
                 echo 'Build...'
                 sh '''
-                    export NVM_DIR="/home/edwincrug/.nvm"
-                    set +x
-                    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-                    nvm use 18.16.0
-                    set -x
-                    cd modern
-                    npm install
-                    npm run build
-                    cd ..
-                '''
+                    export NVM_DIR="/home/edwincrug/.nvm"
+                    set +x
+                    [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
+                    nvm use 18
+                    set -x
+                    cd modern
+                    npm install
+                    cd ..
+                    '''
             }
         }
 
