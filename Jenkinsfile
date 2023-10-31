@@ -21,6 +21,7 @@ pipeline {
                     set -x
                     cd modern
                     npm install
+                    npm run build
                     cd ..
                     '''
             }
@@ -37,7 +38,7 @@ pipeline {
             steps {
                 // Archivar artefactos como el JAR compilado
                 echo 'Artifacts...'
-                archiveArtifacts artifacts: 'build/*.js', fingerprint: true
+                archiveArtifacts artifacts: 'modern/build/*.js', fingerprint: true
             }
         }
 
