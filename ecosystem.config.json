@@ -1,0 +1,26 @@
+{
+  "apps": [
+  {
+    "script": "npm",
+    "args": "run start",
+    "watch": true,
+    "ignore_watch" : ["node_modules", "dist"],
+    "env": {
+      "NODE_ENV": "development"
+      "name": "traccarweb-frontend-dev"
+    }
+    "env_qa": {
+      "NODE_ENV": "qa",
+      "name": "traccarweb-frontend-qa"
+    },
+    "env_production": {
+      "NODE_ENV": "training",
+      "name": "traccarweb-frontend-tra"
+    },
+    "env_training": {
+      "NODE_ENV": "production",
+      "name": "traccarweb-frontend-prod"
+    }
+  }
+  ]
+}
