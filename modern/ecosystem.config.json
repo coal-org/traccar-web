@@ -8,7 +8,7 @@
     "env": {
       "NODE_ENV": "development",
       "name": "traccarweb-frontend-dev"
-    }
+    },
     "env_qa": {
       "NODE_ENV": "qa",
       "name": "traccarweb-frontend-qa"
