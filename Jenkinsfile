@@ -17,7 +17,7 @@ pipeline {
                     export NVM_DIR="/home/edwincrug/.nvm"
                     set +x
                     [ -s "$NVM_DIR/nvm.sh" ] && . "$NVM_DIR/nvm.sh"  # This loads nvm
-                    nvm use 18
+                    nvm use 18.16.0
                     set -x
                     cd modern
                     npm install
