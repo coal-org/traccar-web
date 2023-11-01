@@ -6,7 +6,7 @@ import { VitePWA } from 'vite-plugin-pwa';
 /* eslint-disable no-template-curly-in-string */
 export default defineConfig(() => ({
   server: {
-    port: 3120,
+    port: 3220,
     proxy: {
       '/api/socket': 'wss://api-avl.coal.mx',
       '/api': 'https://api-avl.coal.mx',
