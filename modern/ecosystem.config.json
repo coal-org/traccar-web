@@ -14,12 +14,12 @@
       "name": "traccarweb-frontend-qa"
     },
     "env_production": {
-      "NODE_ENV": "training",
-      "name": "traccarweb-frontend-tra"
-    },
-    "env_training": {
       "NODE_ENV": "production",
       "name": "traccarweb-frontend-prod"
+    },
+    "env_training": {
+      "NODE_ENV": "training",
+      "name": "traccarweb-frontend-tra"
     }
   }
   ]
