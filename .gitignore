@@ -9,6 +9,10 @@ web/modern
 web/lib
 sencha-error-*
 node_modules
+build/
+modern/build/
+modern/dist/
+public/
 
 .*.swp
 *~
