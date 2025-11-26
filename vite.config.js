@@ -6,10 +6,13 @@ import { viteStaticCopy } from 'vite-plugin-static-copy';
 
 export default defineConfig(() => ({
   server: {
-    port: 3220,
+    port: 3000,
     proxy: {
-      '/api/socket': 'wss://api-avl.coal.mx',
-      '/api': 'https://api-avl.coal.mx',
+      '/api/socket': {
+        target: 'ws://localhost:8082',
+        ws: true,
+      },
+      '/api': 'http://localhost:8082',
     },
   },
   build: {
