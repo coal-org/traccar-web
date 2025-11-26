@@ -1,22 +1,21 @@
-import React from 'react';
 import { useTheme, useMediaQuery } from '@mui/material';
 import { useSelector } from 'react-redux';
-import { makeStyles } from '@mui/styles';
-import { ReactComponent as Logo } from '../resources/images/logo.svg';
+import { makeStyles } from 'tss-react/mui';
 
-const useStyles = makeStyles(() => ({
+const useStyles = makeStyles()((theme) => ({
   image: {
     alignSelf: 'center',
-    maxWidth: '240px',
-    maxHeight: '120px',
+    maxWidth: '80%',
+    maxHeight: '200px',
     width: 'auto',
     height: 'auto',
+    margin: theme.spacing(2),
   },
 }));
 
-const LogoImage = ({ color }) => {
+const LogoImage = () => {
   const theme = useTheme();
-  const classes = useStyles();
+  const { classes } = useStyles();
 
   const expanded = !useMediaQuery(theme.breakpoints.down('lg'));
 
@@ -25,11 +24,12 @@ const LogoImage = ({ color }) => {
 
   if (logo) {
     if (expanded && logoInverted) {
-      return <img className={classes.image} src={logoInverted} alt="" />;
+      return <img className={classes.image} src={logoInverted} alt="AVL OCRA" />;
     }
-    return <img className={classes.image} src={logo} alt="" />;
+    return <img className={classes.image} src={logo} alt="AVL OCRA" />;
   }
-  return <Logo className={classes.image} style={{ color }} />;
+  // Default: OCRA logo
+  return <img className={classes.image} src="/logo-ocra.png" alt="AVL OCRA" />;
 };
 
 export default LogoImage;
